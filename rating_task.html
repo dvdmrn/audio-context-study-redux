@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type="text/css" href="style.css">
+    <script type="module" src="js/main.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <video controls autoplay id="videoPlayer">
+        <source src="" type="video/mp4" id="vidSource">
+        Your browser does not support the video tag.
+    </video> 
+<p></p>
+    <div class="container">
+        <div class="video flex-item">
+            <h2>Rating task</h2> <p>
+            The speakers are talking about their <b>favorite sci fi films</b>.
+            <br>
+            Rate how you think the <b>person on the right</b> is feeling (even if they're not speaking).
+            <p></p>
+            <img src="img/focus-subject.svg" width="400px">
+            <p></p>
+            Shortcuts: you can play/pause the video with [space], and go to the next question with [n]
+            <p></p>
+        </div>
+        <div class="flex-item" id="sliders">
+            Scale: 1 = not at all, 3 = neutral, 5 = extremely true
+            <p></p>
+            <!-- sliders will be populated here -->
+        </div>
+    </div>
+    <a id="downloadAnchorElem"></a>
+</body>
+</html>

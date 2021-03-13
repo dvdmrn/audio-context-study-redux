@@ -1,0 +1,74 @@
+body{
+  background-color: rgb(33, 32, 34);
+  color: #c9c9c9;
+  margin:30px;
+  text-align: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.flex-item{
+    flex-grow: 1;
+    margin:10px;
+}
+
+.video{
+    background-color: rgb(52, 50, 53);
+    padding: 10px;
+}
+
+#sliders{
+    display: flex;
+    background-color: rgb(52, 50, 53);
+    padding: 10px;
+    flex-direction: column;
+}
+
+#env-options-menu{
+    background-color: rgb(52, 50, 53);
+    padding: 10px;
+}
+
+.slider{
+      -webkit-appearance: none;
+
+    width: 100%;
+    height: 25px;
+     background: #000000;
+     outline: none;
+}
+
+.response-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.range-label{
+    flex-grow: 1;
+    text-align: center;
+}
+.word-label{
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+}
+.slider-flex{
+    flex-grow: 3;
+}
+
+.env-button{
+    display: inline-block;
+    margin:8px;
+    padding:20px;
+    background-color:#c9c9c9;
+    color: #333;
+}
+
+.env-button:hover{
+    background-color: rgb(150, 193, 212);
+}

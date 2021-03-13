@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type="text/css" href="style.css">
+    <script type="module" src="js/env-main.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <video controls autoplay id="videoPlayer">
+        <source src="" type="video/mp4" id="vidSource">
+        Your browser does not support the video tag.
+    </video> 
+<p></p>
+    <div class="container">
+        <div class="video flex-item">
+            <h2>Environment task</h2> <p>
+            The speakers are talking about their <b>favorite sci fi films</b>.
+            <p></p>
+            <b>We have removed the background of the speaker on the right.</b>
+            <br>
+            In the following videos, select the <b>environment</b> that you think best matches <b>speaker on the right</b>.
+            <p></p>
+            <img src="img/focus-subject.svg" width="400px">
+        </div>
+        <div class="flex-item" id="env-options-menu">
+            Select what you think is happening in the background
+            <p></p>
+            <div id="env-selections">
+                <!-- envs will be populated here -->
+            </div>
+        </div>
+    </div>
+    <a id="downloadAnchorElem"></a>
+</body>
+</html>
