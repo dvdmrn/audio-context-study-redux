@@ -76,9 +76,9 @@ let nextVideo = () => {
         let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pData));
         let dlAnchorElem = document.getElementById('downloadAnchorElem');
         dlAnchorElem.setAttribute("href", dataStr);
-        dlAnchorElem.setAttribute("download", "participant_data.json");
+        dlAnchorElem.setAttribute("download", "rating-task-data.json");
         dlAnchorElem.click();
-        window.location.href="https://www.dvdmrn.xyz"
+        window.location.href="env_task.html"
         }
     else{
         loadVideo("vids/"+playList[vidIndex])
