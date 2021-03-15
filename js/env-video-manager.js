@@ -90,7 +90,8 @@ let selectedItem = (env, target) => {
     let response = {
         selected: env,
         target: target,
-        correct: env === target
+        correct: env === target,
+        file:playList[vidIndex]
     }
     pData.push(response)
     console.log(response)

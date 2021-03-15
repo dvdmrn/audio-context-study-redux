@@ -65,6 +65,7 @@ let nextVideo = () => {
         bg:conditions[vidIndex].bg,
         viz:conditions[vidIndex].viz,
         env:conditions[vidIndex].env,
+        file:conditions[vidIndex].file,
         responses:responses
     })
     console.log(pData)
