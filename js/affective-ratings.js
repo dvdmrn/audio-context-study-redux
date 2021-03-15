@@ -39,7 +39,7 @@ let populateSliders = () => {
         wordLabel.textContent = word; // innerText?
         range2.textContent = "5"
         slider.type = 'range';
-        slider.value = 3;
+        slider.value = 1;
         slider.min = 1;
         slider.max = 5;
         slider.step = 1;
@@ -83,7 +83,7 @@ let getResponses = () => {
 let resetSliders = () => {
     let sliders = document.getElementsByClassName("slider");
     for (let i = 0; i < sliders.length; i++) {
-        sliders[i].value = 3;
+        sliders[i].value = 1;
     }
 }
 
