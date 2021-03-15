@@ -1,5 +1,5 @@
 import {getOrderedPlaylist} from './experiment-control.js';
-import {shuffleArray, getElementWhenLoaded} from "./helpers.js";
+import {shuffleArray, getElementWhenLoaded, updateVideoCounter} from "./helpers.js";
 import { resetSliders, getResponses } from "./affective-ratings.js";
 
 let video = document.getElementById("videoPlayer");
@@ -23,6 +23,7 @@ let source = document.getElementById("vidSource")
 let nextButton;
 
 let pData = [];
+
 
 getElementWhenLoaded("nextButton").then((button)=>{
     nextButton = button;
@@ -70,6 +71,8 @@ let nextVideo = () => {
     
     vidIndex++;
     
+    updateVideoCounter(playList, vidIndex);
+
     if(vidIndex>=playList.length){
         // end of videos
         alert("You've reached the end of this section! You will now be prompted to download your data. It is a small text file. Please download it and follow the instructions at the end of the study to forward it to me")
@@ -88,3 +91,4 @@ let nextVideo = () => {
 
 
 loadVideo("vids/"+playList[vidIndex])
+updateVideoCounter(playList, vidIndex);

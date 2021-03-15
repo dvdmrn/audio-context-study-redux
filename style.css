@@ -93,3 +93,13 @@ h2{
 a{
     color:#72d4fa;
 }
+
+#videoProgress{
+    position: fixed;
+    right:0px;
+    top:0px;
+    margin:20px;
+    background-color: rgb(52, 50, 53);
+    padding: 10px;
+
+}

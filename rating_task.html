@@ -5,16 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' type="text/css" href="style.css">
-    <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="js/affective-main.js" defer></script>
     <title>Document</title>
 </head>
 <body>
+    <div id="videoProgress">
+        Video: <span id="videoCounter">ERROR</span>
+    </div>
     <video controls autoplay id="videoPlayer">
         <source src="" type="video/mp4" id="vidSource">
         Your browser does not support the video tag.
     </video> 
 <p></p>
     <div class="container">
+        
         <div class="video flex-item">
             <h2>Rating task</h2> <p>
             The speakers are having a video call about their <b>favorite sci fi films</b>.

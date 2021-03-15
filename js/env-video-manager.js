@@ -1,4 +1,4 @@
-import { shuffleArray } from "./helpers.js";
+import { shuffleArray, updateVideoCounter } from "./helpers.js";
 // import { populateEnvironments, removeDivs } from "./env-task.js";
 
 
@@ -160,7 +160,8 @@ let toggleVideo = function(){
 let nextVideo = () => {
 
     vidIndex++;
-    
+    updateVideoCounter(playList, vidIndex)
+
     if(vidIndex>=playList.length){
         // end of videos
         alert("You've reached the end of this section! You will now be prompted to download your data. It is a small text file. Please download it and follow the instructions at the end of the study to forward it to me")
@@ -188,6 +189,7 @@ playList = envPlayList.map(e => { return e.file })
 
 console.log("env playlist: ", envPlayList)
 populateEnvironments(envPlayList[0].env)
+updateVideoCounter(playList, vidIndex)
 
 loadVideo(playList[vidIndex])
 
