@@ -15,8 +15,6 @@ let playList = conditions.map((e) => { return e.file })
 console.log("conditions: ",conditions)
 console.log("playlist: ", playList)
 
-console.log(playList.length)
-
 let vidIndex = 0;
 let source = document.getElementById("vidSource")
 
