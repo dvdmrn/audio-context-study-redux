@@ -39,7 +39,7 @@ let updateVideoCounter = (pl, index) => {
     // ASSUMES: there is a videoCounter on the .html page
     if (index < pl.length){
         console.log("got here index: ",index)
-        videoCounter = document.getElementById("videoCounter");
+        let videoCounter = document.getElementById("videoCounter");
         videoCounter.innerHTML = (index + 1) + " / " + pl.length
     }
 }
