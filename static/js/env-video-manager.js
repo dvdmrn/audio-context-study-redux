@@ -174,11 +174,9 @@ let nextVideo = () => {
 
     if(vidIndex>=playList.length){
         // end of videos
-        socket.emit("saveData",pData,"env")
-        
-        alert("End of section 2/2!")
-
-        window.location.href="end.html"
+        socket.emit("saveData",pData, sessionStorage.getItem("pid"),"env")
+        alert("End of section 2/3!")
+        window.location.href="feedback.html"
         }
     else{
         loadVideo(playList[vidIndex])

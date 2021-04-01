@@ -16,13 +16,10 @@ const io = require('socket.io')(server);
 const fs = require('fs');
 
 
-// globals ============================================\\
-let pid = "P00"
-
-
 
 // functions  ============================================\\
-function saveData(data,type) {
+function saveData(data, pid, type) {
+    console.log("saving data: ",pid," : ",type);
     let dataStr = JSON.stringify(data);
     filename = pid + '-' + type + '.json';
     fs.writeFileSync("data/"+filename, dataStr);
@@ -30,13 +27,11 @@ function saveData(data,type) {
 // socket events ============================================\\
 
 io.on('connection', (socket) => {
-    socket.on("sendPID", newPID=>{
-        console.log("recieved pID: ",newPID)
-        pid = newPID
-    })
 
-    socket.on("saveData", (d, phase) => {
-        saveData(d, phase);
+    console.log('client connected', socket.id)
+    socket.on("saveData", (d, pid, phase) => {
+        saveData(d, pid, phase);
+        
     })
 })
 

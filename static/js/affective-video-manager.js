@@ -77,15 +77,10 @@ let nextVideo = () => {
 
     if(vidIndex>=playList.length){
         // end of videos
-        alert("End of part 1/2!")
+        alert("End of section 1/3!")
         console.log(pData);
-        socket.emit("saveData", pData, "ratings")
-        // !!! remove ---
-        let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pData));
-        let dlAnchorElem = document.getElementById('downloadAnchorElem');
-        dlAnchorElem.setAttribute("href", dataStr);
-        dlAnchorElem.setAttribute("download", "rating-task-data.json");
-        dlAnchorElem.click();
+        socket.emit("saveData", pData, sessionStorage.getItem("pid"), "ratings")
+        
         window.location.href="env_task.html"
         }
     else{
