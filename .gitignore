@@ -1,3 +1,5 @@
 *.mp4
 *.mov
 pilot_notes.txt
+node_modules/
+data/

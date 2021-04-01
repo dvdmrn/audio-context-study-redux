@@ -1,44 +1,49 @@
 import { shuffleArray, updateVideoCounter } from "./helpers.js";
 // import { populateEnvironments, removeDivs } from "./env-task.js";
 
+const socket = io();
 
 const environments = [
-    "busy street",
-    "cat meowing",
-    "construction site",
-    "baby crying",
-    "running water",
-    "crickets",
-    "party",
-    "car repair center",
-    "vacuuming",
-    "nothing"
+    { name: "cat meowing", features: { organic: 1, artificial: 0, exterior: 1, interior: 1 } },
+    { name: "crickets", features: { organic: 1, artificial: 0, exterior: 1, interior: 0 } },
+    { name: "busy street", features: { organic: 1, artificial: 1, exterior: 1, interior: 0 } },
+    { name: "vacuuming", features: { organic: 0, artificial: 1, exterior: 0, interior: 1 } },
+    { name: "construction site", features: { organic: 0, artificial: 1, exterior: 1, interior: 0 } },
+    { name: "baby crying", features: { organic: 1, artificial: 0, exterior: 0, interior: 1 } },
+    { name: "running water", features: { organic: 1, artificial: 0, exterior: 1, interior: 0 } },
+    { name: "party", features: { organic: 1, artificial: 0, exterior: 0, interior: 1 } },
+    { name: "car repair center", features: { organic: 0, artificial: 1, exterior: 0, interior: 1 } },
+    { name: "nothing", features: { organic: 0, artificial: 0, exterior: 0, interior: 0 } },
 ]
 
 
 
 let envPlayList = [
     
-    { file: "vids/env/env-cat-1.mp4", env: "cat meowing" },
-    { file: "vids/env/env-cat-2.mp4", env: "cat meowing" },
+    // cat meowing
+    { file: "vids/env/env-cat-1.mp4", env: environments[0] },  
+    { file: "vids/env/env-cat-2.mp4", env: environments[0] },
     // { file: "vids/env/env-cat-3.mp4", env: "cat meowing" }, TODO: RE-EXPORT THIS ONE IT'S IN 1080 FOR SOME REASON
-    { file: "vids/env/env-cat-4.mp4", env: "cat meowing" },
-    { file: "vids/env/env-cat-4.mp4", env: "cat meowing" },
+    { file: "vids/env/env-cat-4.mp4", env: environments[0] },
+    { file: "vids/env/env-cat-4.mp4", env: environments[0] },
 
-    { file: "vids/env/env-crickets-1.mp4", env: "crickets" },
-    { file: "vids/env/env-crickets-2.mp4", env: "crickets" },
-    { file: "vids/env/env-crickets-3.mp4", env: "crickets" },
-    { file: "vids/env/env-crickets-4.mp4", env: "crickets" },
+    // crickets
+    { file: "vids/env/env-crickets-1.mp4", env: environments[1] },
+    { file: "vids/env/env-crickets-2.mp4", env: environments[1] },
+    { file: "vids/env/env-crickets-3.mp4", env: environments[1] },
+    { file: "vids/env/env-crickets-4.mp4", env: environments[1] },
 
-    { file: "vids/env/env-street-1.mp4", env: "busy street" },
-    { file: "vids/env/env-street-2.mp4", env: "busy street" },
-    { file: "vids/env/env-street-3.mp4", env: "busy street" },
-    { file: "vids/env/env-street-4.mp4", env: "busy street" },
+    // busy street
+    { file: "vids/env/env-street-1.mp4", env: environments[2] },
+    { file: "vids/env/env-street-2.mp4", env: environments[2] },
+    { file: "vids/env/env-street-3.mp4", env: environments[2] },
+    { file: "vids/env/env-street-4.mp4", env: environments[2] },
 
-    { file: "vids/env/env-vacuum-1.mp4", env: "vacuuming" },
-    { file: "vids/env/env-vacuum-2.mp4", env: "vacuuming" },
-    { file: "vids/env/env-vacuum-3.mp4", env: "vacuuming" },
-    { file: "vids/env/env-vacuum-4.mp4", env: "vacuuming" }
+    // vacuum
+    { file: "vids/env/env-vacuum-1.mp4", env: environments[3] },
+    { file: "vids/env/env-vacuum-2.mp4", env: environments[3] },
+    { file: "vids/env/env-vacuum-3.mp4", env: environments[3] },
+    { file: "vids/env/env-vacuum-4.mp4", env: environments[3] }
 
 ]
 
@@ -60,6 +65,7 @@ let pData = [];
 
 
 let populateEnvironments = (target) => {
+    console.log("target: ",target)
     let container = document.getElementById("env-selections");
     let targetIndex = Math.floor(Math.random() * 4)
 
@@ -71,17 +77,18 @@ let populateEnvironments = (target) => {
         let environment = environments[i];
 
         // prevents duplicates
-        if (environment === target) {
+        if (environment.name === target.env.name) {
             environment = environments[4]
         }
+        
         // ensures target is inserted
         if (i === targetIndex) {
-            environment = target
+            environment = target.env
         }
-
-        div.textContent = environment
+        
+        div.textContent = environment.name
         div.classList.add("env-button")
-        div.onclick = () => { selectedItem(environment, target) }
+        div.onclick = () => { selectedItem(environment, target.env) }
         container.appendChild(div)
     }
 }
@@ -90,9 +97,10 @@ let selectedItem = (env, target) => {
     let response = {
         selected: env,
         target: target,
-        correct: env === target,
+        correct: env.name === target.name,
         file:playList[vidIndex]
     }
+    console.log("response: ",response)
     pData.push(response)
     console.log(response)
     nextVideo();
@@ -117,6 +125,7 @@ let removeDivs = () => {
 
 let decimatePlayList = (inputArr) => {
     // ASSUME: playlist is not shuffled yet
+    // selects 2 segments from each condition (so there isn't 4xConditions # of videos)
 
         let workingArr = inputArr.slice(0)
         let reducedPlaylist = []
@@ -153,10 +162,10 @@ let toggleVideo = function(){
         video.pause();
     }
     else{
-
         video.play()
     }
 }
+
 
 let nextVideo = () => {
 
@@ -165,18 +174,16 @@ let nextVideo = () => {
 
     if(vidIndex>=playList.length){
         // end of videos
-        alert("You've reached the end of this section! You will now be prompted to download your data. It is a small text file. Please download it and follow the instructions at the end of the study to forward it to me")
-        let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pData));
-        let dlAnchorElem = document.getElementById('downloadAnchorElem');
-        dlAnchorElem.setAttribute("href", dataStr);
-        dlAnchorElem.setAttribute("download", "env-task-data.json");
-        dlAnchorElem.click();
+        socket.emit("saveData",pData,"env")
+        
+        alert("End of section 2/2!")
+
         window.location.href="end.html"
         }
     else{
         loadVideo(playList[vidIndex])
         removeDivs()
-        populateEnvironments(envPlayList[vidIndex].env)
+        populateEnvironments(envPlayList[vidIndex])
         }
 }
 
@@ -189,7 +196,7 @@ shuffleArray(envPlayList)
 playList = envPlayList.map(e => { return e.file })
 
 console.log("env playlist: ", envPlayList)
-populateEnvironments(envPlayList[0].env)
+populateEnvironments(envPlayList[0])
 updateVideoCounter(playList, vidIndex)
 
 loadVideo(playList[vidIndex])

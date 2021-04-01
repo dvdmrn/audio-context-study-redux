@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' type="text/css" href="style.css">
-    <script type="module" src="js/affective-main.js" defer></script>
+    <script type="text/javascript" src="lib/socket.io.js"></script>
+
+    <script type="module" src="js/env-video-manager.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -18,22 +20,22 @@
     </video> 
 <p></p>
     <div class="container">
-        
         <div class="video flex-item">
-            <h2>Rating task</h2> <p>
-            The speakers are having a video call about their <b>favorite sci fi films</b>.
+            <h2>Environment task</h2> <p>
+            The speakers are having a video call about <b>theatre</b>.
+            <p></p>
+            <b>The background audio and visuals of the speakers have been removed.</b>
             <br>
-            Rate how you think the <b>person on the right</b> is feeling (even if they're not speaking).
+            In the following videos, select the <b>environment</b> that you think best matches <b>speaker on the right</b>.
             <p></p>
             <img src="img/focus-subject.svg" width="400px">
-            <p></p>
-            Shortcuts: you can play/pause the video with [space], and go to the next question with [n]
-            <p></p>
         </div>
-        <div class="flex-item" id="sliders">
-            Scale: 1 = not at all, 5=extremely
+        <div class="flex-item" id="env-options-menu">
+            Select what you think is happening in the background
             <p></p>
-            <!-- sliders will be populated here -->
+            <div id="env-selections">
+                <!-- envs will be populated here -->
+            </div>
         </div>
     </div>
     <a id="downloadAnchorElem"></a>

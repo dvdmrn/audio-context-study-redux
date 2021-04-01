@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' type="text/css" href="style.css">
-    <title>Document</title>
+    
+    <script type="text/javascript" src="lib/socket.io.js"></script>
+    
+    <script type="module" src="js/introduction.js" defer></script>
+
+    <title>telecontext study</title>
 </head>
 <body>
 
@@ -21,9 +26,16 @@
         At the end of each stage, you will be prompted to <b>download your data</b>. Your data will be a small text file (.json). At the conclusion of the study, you will be given a google form to upload your data.
         <p></p>
         Audio is a cruicial component of this study, so please make sure you have <b>headphones</b> or <b>speakers</b> enabled.
-        <div class="menu-button">
-            <button onclick="location.href='rating_task.html';">Let's get started!</button>
-        </div>
+        <p></p>
+        To begin, enter your <b>Participant ID</b> (supplied from the researcher)
+        <p></p>
+        <form>
+            Participant ID: <input type="text" id="pIDfield" maxlength="3" size="3">
+            <p></p>
+            <div class="menu-button">
+                <button id="nextButton">Let's get started!</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>
