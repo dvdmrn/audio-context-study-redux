@@ -44,43 +44,53 @@ let getOrderedPlaylist = ()=>{
     
     // audio && viz == true
     for (let i = 0; i < conditions.length; i++) {
-        let fileName = "V-" +
-                       conditions[i] + "-" +
-                       "A-" +
+        let fileName = "viz-bg-" +
                        conditions[i] + "-" +
                        clips[Math.floor(Math.random() * clips.length)] + ".mp4"
         combinations.push({
-                       audio: conditions[i],
-                       viz: conditions[i],
+                       audio: true,
+                       viz: true,
+                       env: conditions[i],
                        file: fileName
         })
     }
 
     // audio == false
     for (let i = 0; i < conditions.length; i++) {
-        let fileName = "V-" +
-            conditions[i] + "-" +
-            "A-" +
-            "off-" +
-            clips[Math.floor(Math.random() * clips.length)] + ".mp4"
+        let fileName =  "viz-nobg-" +
+                        conditions[i] + "-" +
+                        clips[Math.floor(Math.random() * clips.length)] + ".mp4"
         combinations.push({
-            audio: "off",
-            viz: conditions[i],
-            file: fileName
+                        audio: false,
+                        viz: true,
+                        env: conditions[i],
+                        file: fileName
         })
     }
 
     // viz == off
     for (let i = 0; i < conditions.length; i++) {
-        let fileName = "V-" +
-            "off-" +
-            "A-" +
-            conditions[i] + "-" +
-            clips[Math.floor(Math.random() * clips.length)] + ".mp4"
+        let fileName = "noviz-bg-" +
+                        conditions[i] + "-" +
+                        clips[Math.floor(Math.random() * clips.length)] + ".mp4"
         combinations.push({
-            audio: conditions[i],
-            viz: "off",
-            file: fileName
+                        audio: true,
+                        viz: false,
+                        env: conditions[i],
+                        file: fileName
+        })
+    }
+
+    // viz==off && audio==off
+
+    for (let i = 0; i < conditions.length; i++) {
+        let fileName = "noviz-nobg-null-" +
+                       clips[i] + ".mp4"           
+        combinations.push({
+                        audio: true,
+                        viz: false,
+                        env: conditions[i],
+                        file: fileName
         })
     }
         

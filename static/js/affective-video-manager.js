@@ -66,6 +66,7 @@ let nextVideo = () => {
     pData.push({
         audio:conditions[vidIndex].audio,
         viz:conditions[vidIndex].viz,
+        env:conditions[vidIndex].env,
         file:conditions[vidIndex].file,
         responses:responses
     })
@@ -79,16 +80,15 @@ let nextVideo = () => {
         // end of videos
         alert("End of section 1/3!")
         console.log(pData);
-        socket.emit("saveData", pData, sessionStorage.getItem("pid"), "ratings")
-        
+        socket.emit("saveData", pData, sessionStorage.getItem("pid"), "ratings")        
         window.location.href="env_task.html"
         }
     else{
-        loadVideo("vids/"+playList[vidIndex])
+        loadVideo("vids/rating/"+playList[vidIndex])
         resetSliders()
         }
 }
 
 
-loadVideo("vids/"+playList[vidIndex])
+loadVideo("vids/rating/"+playList[vidIndex])
 updateVideoCounter(playList, vidIndex);
