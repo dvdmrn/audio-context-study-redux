@@ -30,6 +30,7 @@ io.on('connection', (socket) => {
 
     console.log('client connected', socket.id)
     socket.on("saveData", (d, pid, phase) => {
+        console.log(`save data called for participant ${pid}`)
         saveData(d, pid, phase);
         
     })
