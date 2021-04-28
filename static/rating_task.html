@@ -7,7 +7,7 @@
     <link rel='stylesheet' type="text/css" href="style.css">
     <script type="text/javascript" src="lib/socket.io.js"></script>
 
-    <script type="module" src="js/affective-main.js" defer></script>
+    <script type="module" src="js/affective-video-manager.js" defer></script>
     <title>telecontext</title>
 </head>
 <body>
@@ -33,9 +33,51 @@
             <p></p>
         </div>
         <div class="flex-item" id="sliders">
-            Scale: 1 = not at all, 5=extremely
+            Level of arousal
+
+            <!-- // < div class="response-container">
+                // <div class="word-label">Excited</div>
+                // <div class="range-label">1</div>
+                // <div class="slider-flex">
+                    // <input type="range" min="1" max="5" value="3" class="slider" step="1" id="excited"></input>
+                    // </div>
+                // <div class="range-label">5</div>
+            // </div> -->
+
+            <div class="response-container">
+                <div class="range-label">
+                    <object class='arousal_svg' type="image/svg+xml" data="img/AS_sleepy.svg"></object>
+                </div>
+                <div class="scale-flex">
+                    <input type="range" class="slider" name="AS-arousal" id="activation" value="3" min="1" max="5" step="1" />                    
+                    <object class='intensity_cue_svg' type="image/svg+xml" data="img/AS_intensity_cue_white.svg"></object>
+                </div>
+                <div class="range-label">
+                    <object class='arousal_svg' type="image/svg+xml" data="img/AS_wideawake.svg"></object>
+                </div>
+            </div>
             <p></p>
-            <!-- sliders will be populated here -->
+            
+            Level of pleasure
+            <div class="response-container">
+                <div class="range-label">
+                    <object class='arousal_svg' type="image/svg+xml" data="img/AS_unhappy.svg"></object>
+                </div>
+                <div class="scale-flex">
+                    <input type="range" class="slider" name="AS-pleasure" id="valence" value="3" min="1" max="5" step="1" />
+                    <object class='intensity_cue_svg' type="image/svg+xml" data="img/AS_intensity_cue_white.svg"></object>
+                </div>
+                <div class="range-label">
+                    <object class='arousal_svg' type="image/svg+xml" data="img/AS_happy.svg"></object>
+
+                </div>
+            </div>
+
+
+
+
+            <p></p>
+            <button id="nextButton">next</button>
         </div>
     </div>
     <a id="downloadAnchorElem"></a>

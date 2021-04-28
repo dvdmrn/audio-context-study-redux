@@ -35,8 +35,7 @@ body{
 }
 
 .slider{
-      -webkit-appearance: none;
-
+    -webkit-appearance: none;
     width: 100%;
     height: 25px;
      background: #000000;
@@ -51,16 +50,36 @@ body{
 .range-label{
     flex-grow: 1;
     text-align: center;
+    max-width: 80px;
+    flex-shrink: 0;
+    flex-basis: 0;
+    padding-left:10px;
+    padding-right:10px;
 }
 .word-label{
     width: 150px;
     text-align: center;
     font-weight: bold;
 }
-.slider-flex{
-    flex-grow: 3;
+.scale-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 2;
 }
-
+.intensity_cue_svg{
+    display: flex;
+    width: 100%;
+    height:auto;
+    
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+.intensity-cue{
+    background-color: #72d4fa;
+    width:100%;
+    height: 50px;
+}
 .env-button{
     display: inline-block;
     margin:8px;

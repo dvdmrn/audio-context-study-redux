@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 644.9 42.5" style="enable-background:new 0 0 644.9 42.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#path4261_1_);}
+	.st1{fill:url(#path4281_1_);}
+</style>
+<g id="Layer_2">
+</g>
+<g id="svg4985" inkscape:version="0.91 r13725" sodipodi:docname="AS_intensity_cue.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+	
+		<sodipodi:namedview  bordercolor="#666666" borderopacity="1.0" id="base" inkscape:current-layer="layer1" inkscape:cx="507.83342" inkscape:cy="-139.12745" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="768" inkscape:window-maximized="0" inkscape:window-width="1366" inkscape:window-x="0" inkscape:window-y="0" inkscape:zoom="0.7" pagecolor="#ffffff" showgrid="false">
+		</sodipodi:namedview>
+	<g id="layer1" transform="translate(0,-999.21257)" inkscape:groupmode="layer" inkscape:label="Layer 1">
+		<g id="g4956" transform="matrix(1.25,0,0,-1.25,-137.40278,1109.3769)">
+			
+				<linearGradient id="path4261_1_" gradientUnits="userSpaceOnUse" x1="48.5132" y1="-248.531" x2="49.5132" y2="-248.531" gradientTransform="matrix(322.5469 0 0 -322.5469 -15279.71 -80091.7891)">
+				<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+				<stop  offset="1" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<path id="path4261" inkscape:connector-curvature="0" class="st0" d="M497.1,79.2l-129-8.5l129-8.1l129-8.1v16.5v16.5L497.1,79.2
+				z"/>
+			<g id="g4263">
+				<g id="g4265">
+					<g id="g4271">
+						<g id="g4273">
+							
+								<linearGradient id="path4281_1_" gradientUnits="userSpaceOnUse" x1="48.1265" y1="-250.406" x2="49.1265" y2="-250.406" gradientTransform="matrix(-322.5469 0 0 322.5469 15892.6572 80837.9844)">
+								<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+								<stop  offset="1" style="stop-color:#FFFFFF"/>
+							</linearGradient>
+							<path id="path4281" inkscape:connector-curvature="0" class="st1" d="M110,70.3V53.8l129,8.5l129,8.5l-129,8.1l-129,8.1
+								L110,70.3L110,70.3z"/>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
