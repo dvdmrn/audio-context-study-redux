@@ -1,15 +1,15 @@
-let emotionWords = [
-                    "Interested",
-                    "Distressed",
-                    "Excited",
-                    "Upset",
-                    "Strong",
-                    "Guilty",
-                    "Scared",
-                    "Hostile",
-                    "Enthusiastic",
-                    "Proud"
-                    ]
+// let emotionWords = [
+//                     "Interested",
+//                     "Distressed",
+//                     "Excited",
+//                     "Upset",
+//                     "Strong",
+//                     "Guilty",
+//                     "Scared",
+//                     "Hostile",
+//                     "Enthusiastic",
+//                     "Proud"
+//                     ]
 
 
 
@@ -92,5 +92,5 @@ let resetSliders = () => {
 let button = document.getElementById("nextButton");
 button.onclick = getResponses
 
-export {emotionWords, getResponses, resetSliders};
+export {getResponses, resetSliders};
 

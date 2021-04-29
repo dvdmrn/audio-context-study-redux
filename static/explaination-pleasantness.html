@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="single-message">
+
+        <p>
+            <h1>Pleasantness</h1>
+        </p>
+        <p>
+            <img src="img/pleasant.png" width="100%">
+        </p>
+        <p>
+            This scale relates to how <b>pleasurable</b> an emotion is.
+        </p>
+        <p>
+            <b>High pleasantness</b> is when someone has very nice, positive feelings like excitement, happiness, and joy 🤗😂😀
+        
+        </p>
+        
+        <p>
+            <b>Low pleasantness</b> relates to highly negative emotions like anger or fear 😢😠😨
+        </p>
+        
+        <p>
+            You will rate someone's pleasantness using a scale like below. You can try it out now.
+        </p>
+        
+        <p>
+        <div class="response-container">
+            <div class="range-label">
+                <object class='arousal_svg' type="image/svg+xml" data="img/AS_unhappy.svg"></object>
+            </div>
+            <div class="scale-flex">
+                <input type="range" class="slider" name="AS-pleasure" id="valence" value="3" min="1" max="7" step="1" />
+                <object class='intensity_cue_svg' type="image/svg+xml" data="img/AS_intensity_cue_white.svg"></object>
+            </div>
+            <div class="range-label">
+                <object class='arousal_svg' type="image/svg+xml" data="img/AS_happy.svg"></object>
+        
+            </div>
+        </div>
+        </p>
+        
+        <hr>
+        <div class="menu-button">
+            <button onclick="location.href='rating_task.html';">begin rating task</button>
+        </div>
+    </div>
+</body>
+</html>
