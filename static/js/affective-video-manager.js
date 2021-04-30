@@ -66,7 +66,7 @@ let nextVideo = () => {
     pData.push({
         audio:conditions[vidIndex].audio,
         viz:conditions[vidIndex].viz,
-        env:conditions[vidIndex].env,
+        env: conditions[vidIndex].env,
         file:conditions[vidIndex].file,
         responses:responses
     })

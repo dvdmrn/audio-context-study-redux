@@ -126,3 +126,9 @@ a{
     padding: 10px;
 
 }
+
+.feedbackFields{
+    width:90%;
+    margin-bottom:10px;
+    margin-top:10px;
+}
