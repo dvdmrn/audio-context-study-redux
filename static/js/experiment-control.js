@@ -87,9 +87,9 @@ let getOrderedPlaylist = ()=>{
         let fileName = "noviz-nobg-null-" +
                        clips[i] + ".mp4"           
         combinations.push({
-                        audio: true,
+                        audio: false,
                         viz: false,
-                        env: conditions[i],
+                        env: "null",
                         file: fileName
         })
     }
