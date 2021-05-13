@@ -1,6 +1,6 @@
 import {getOrderedPlaylist} from './experiment-control.js';
 import {shuffleArray, getElementWhenLoaded, updateVideoCounter} from "./helpers.js";
-import { resetSliders, getResponses } from "./affective-ratings.js";
+import { resetSliders, getResponses, populateSliders } from "./affective-rating-sliders.js";
 
 const socket = io();
 
@@ -89,6 +89,9 @@ let nextVideo = () => {
         }
 }
 
+populateSliders();
+let button = document.getElementById("nextButton");
+button.onclick = getResponses
 
 loadVideo("vids/rating/"+playList[vidIndex])
 updateVideoCounter(playList, vidIndex);

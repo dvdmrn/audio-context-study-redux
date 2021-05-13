@@ -23,8 +23,7 @@ let envPlayList = [
     // cat meowing
     { file: "vids/env/env-cat-1.mp4", env: environments[0] },  
     { file: "vids/env/env-cat-2.mp4", env: environments[0] },
-    // { file: "vids/env/env-cat-3.mp4", env: "cat meowing" }, TODO: RE-EXPORT THIS ONE IT'S IN 1080 FOR SOME REASON
-    { file: "vids/env/env-cat-4.mp4", env: environments[0] },
+    { file: "vids/env/env-cat-3.mp4", env: environments[0] },
     { file: "vids/env/env-cat-4.mp4", env: environments[0] },
 
     // crickets

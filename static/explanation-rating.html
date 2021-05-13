@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type="text/css" href="style.css">
+    <title>Ratings explainer</title>
+</head>
+<body>
+
+    <div class="single-message">
+        <h2>Rating task</h2>
+        <p>
+            In this experiment you will be asked to rate the <b>emotions</b> of someone speaking.
+        </p>
+        <p>
+            You will rate the degree to which certain <b>emotion words</b> apply to the speaker from 1-5
+        </p>
+        <p>
+            A rating of 1 means it does not apply at all. A rating of 5 means it extremely applies.
+            <br>
+            For example, if someone is crying because their dog died, you may imagine they have a sadness rating of 5 and a happiness rating of 1. But if someone is crying because their child is leaving for college, you may imagine a sadness rating of 3 and happiness rating of 3.
+        </p>
+
+        <p>
+            Below is an example of the sliders
+        </p>
+        <div id="sliders">
+            <p></p>
+            <!-- sliders will be populated here -->
+        </div>
+        
+        <div class="menu-button">
+            <button onclick="location.href='rating_task.html';">Sounds great let's get started!</button>
+        </div>
+    </div>
+    <script>
+        let emotionWords = [
+                "Interested",
+                "Distressed",
+                "Excited",
+                "Upset",
+                "Strong",
+                "Guilty",
+                "Scared",
+                "Hostile",
+                "Enthusiastic",
+                "Proud"
+            ]
+        let masterContainer = document.getElementById("sliders");
+
+            emotionWords.forEach(word => {
+                let container = document.createElement("div");
+                let wordLabel = document.createElement("div");
+                let range1 = document.createElement("div");
+                let range2 = document.createElement("div");
+                let sliderFlex = document.createElement("div");
+                let slider = document.createElement("input");
+
+                range1.textContent = "1"
+                wordLabel.textContent = word; // innerText?
+                range2.textContent = "5"
+                slider.type = 'range';
+                slider.value = 1;
+                slider.min = 1;
+                slider.max = 5;
+                slider.step = 1;
+                slider.id = word;
+
+                container.classList.add("response-container")
+                wordLabel.classList.add("word-label")
+                range1.classList.add("range-label")
+                range2.classList.add("range-label")
+                sliderFlex.classList.add("slider-flex")
+                slider.classList.add("slider");
+
+                container.appendChild(wordLabel)
+                container.appendChild(range1)
+                container.appendChild(sliderFlex)
+                container.appendChild(range2)
+
+                sliderFlex.appendChild(slider)
+
+                masterContainer.appendChild(container);
+
+            });
+    </script>
+</body>
+</html>

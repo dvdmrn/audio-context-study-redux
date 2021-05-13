@@ -85,12 +85,11 @@ let getResponses = () => {
 let resetSliders = () => {
     let sliders = document.getElementsByClassName("slider");
     for (let i = 0; i < sliders.length; i++) {
-        sliders[i].value = 4;
+        sliders[i].value = 1;
     }
 }
 
-let button = document.getElementById("nextButton");
-button.onclick = getResponses
 
-export {getResponses, resetSliders};
+
+export {getResponses, resetSliders, populateSliders};
 
