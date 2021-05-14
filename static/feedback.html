@@ -33,7 +33,8 @@
                 {
                     let meaning = document.getElementById("meaning").value;
                     let sounds = document.getElementById("sounds").value;
-                    let pData = {meaning:meaning, sounds:sounds}
+                    let completionTime = new Date().getTime() - sessionStorage.getItem("startTime");
+                    let pData = {meaning:meaning, sounds:sounds, completionTimeMs: completionTime}
                     
                     socket.emit("saveData", pData, sessionStorage.getItem("pid"), "feedback")
                     alert("section 3/3 complete!")

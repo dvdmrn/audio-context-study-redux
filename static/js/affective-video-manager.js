@@ -92,6 +92,7 @@ let nextVideo = () => {
 populateSliders();
 let button = document.getElementById("nextButton");
 button.onclick = getResponses
+sessionStorage.setItem("startTime",new Date().getTime())
 
 loadVideo("vids/rating/"+playList[vidIndex])
 updateVideoCounter(playList, vidIndex);
